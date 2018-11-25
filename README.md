@@ -28,12 +28,12 @@ npm install --save role-based-access-control
 
 ## Usage
 
-* Import `role-based-access-control`
+Import `role-based-access-control`
 ```js
 import { Policy, Role, Statement, Subject } from 'role-based-access-control';
 ```
 
-* Create statements
+Create statements
 ```js
 const statements = {
   readFile: new Statement('read', 'file'),
@@ -45,7 +45,7 @@ const statements = {
 };
 ```
 
-* Create policies from statements
+Create policies from statements
 ```js
 const policies = {
   readFile: new Policy('readFile', [statements.readFile]),
@@ -76,7 +76,7 @@ const policies = {
 };
 ```
 
-* Create roles from policies
+Create roles from policies
 ```js
 const roles = {
   visitor: new Role('read', [policies.readAll]),
@@ -85,14 +85,14 @@ const roles = {
 };
 ```
 
-* Assign roles to subjects
+Assign roles to subjects
 
 ```js
 const someVisitor = new Subject('someVisitor', [roles.visitor]);
 const someAdmin = new Subject('someVisitor', [roles.admin]);
 ```
 
-* Check if subject can execute statement
+Check if subject can execute statement
 ```js
 someVisitor.can(readFile); // true
 someVisitor.can(deleteFile); // false
@@ -102,17 +102,17 @@ someAdmin.can(deleteFile); // true
 ```
 
 
-[Contribute](https://github.com/codejamninja/role-based-access-control/blob/master/CONTRIBUTING.md) usage docs
-
-
 ## Support
 
 Submit an [issue](https://github.com/codejamninja/role-based-access-control/issues/new)
 
 
-## Screenshots
+## Roadmap
 
-[Contribute](https://github.com/codejamninja/role-based-access-control/blob/master/CONTRIBUTING.md) a screenshot
+* Support role inheritance
+* Support blocking statements
+* Support resource ownership
+* Support role tagging
 
 
 ## Contributing
