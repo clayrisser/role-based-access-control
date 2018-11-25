@@ -1,6 +1,10 @@
 # role-based-access-control
 
-[![GitHub stars](https://img.shields.io/github/stars/codejamninja/role-based-access-control.svg?style=social&label=Stars)](https://github.com/codejamninja/role-based-access-control)
+[![npm](https://img.shields.io/npm/dt/role-based-access-control.svg?style=flat-square)](https://www.npmjs.com/package/role-based-access-control)
+[![GitHub](https://img.shields.io/github/license/codejamninja/role-based-access-control.svg?style=flat-square)](https://www.npmjs.com/package/role-based-access-control)
+[![npm type definitions](https://img.shields.io/npm/types/role-based-access-control.svg?style=flat-square)](https://www.npmjs.com/package/role-based-access-control)
+[![GitHub stars](https://img.shields.io/github/stars/codejamninja/role-based-access-control.svg?label=Stars&style=flat-square)](https://github.com/codejamninja/role-based-access-control)
+
 
 > unopinionated role based access control
 
