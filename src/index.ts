@@ -8,6 +8,10 @@ import Subject from './Subject';
 
 export { Policy, Role, Statement, Subject };
 
+export default class RoleBasedAccessControl {
+  constructor(public policies: Policy[] = []) {}
+}
+
 // export default class RBAC {
 //   policies: Policy[];
 

@@ -34,8 +34,8 @@
     "build": "npm run test && tsc",
     "clean": "git clean -fXd -e \\!node_modules -e \\!node_modules/**/*",
     "format": "prettier --write ./src/**/*.ts",
-    "lint": "npm run format && tslint --project .",
-    "lint:fix": "npm run format && tslint --fix --project .",
+    "lint": "npm run format && tslint --project . --project tests",
+    "lint:fix": "npm run format && tslint --fix --project . --project tests",
     "prepublish": "npm run clean && npm run build",
     "start": "ts-node src",
     "test": "npm run lint && jest"
