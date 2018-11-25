@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import Action, { getAction } from './Action';
+import Action from './Action';
 import Resource from './Resource';
 import Role from './Role';
 import Statement from './Statement';
@@ -27,8 +27,7 @@ export default class Subject {
     return this._statements;
   }
 
-  can(action: Action | string, resource: Resource): boolean {
-    action = typeof action === 'string' ? getAction(action) : action;
+  can(action: Action, resource: Resource): boolean {
     return _.reduce(
       this.statements,
       (can: boolean, statement: Statement) => {

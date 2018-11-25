@@ -32,7 +32,7 @@
   },
   "scripts": {
     "build": "npm run test && tsc",
-    "clean": "git clean -fXd -e \\!node_modules -e \\!node_modules/**/*",
+    "clean": "git clean -fXd -e \\!node_modules -e \\!node_modules/**/* && jest --clearCache",
     "format": "prettier --write ./src/**/*.ts",
     "lint": "npm run format && tslint --project . --project tests",
     "lint:fix": "npm run format && tslint --fix --project . --project tests",
