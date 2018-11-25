@@ -1,0 +1,61 @@
+{
+  "name": "role-based-access-control",
+  "version": "0.0.1",
+  "description": "unopinionated role based access control",
+  "keywords": [
+    "role-based-access-control",
+    "rbac",
+    "role",
+    "based",
+    "access",
+    "control",
+    "access-control"
+  ],
+  "homepage": "https://github.com/codejamninja/role-based-access-control",
+  "bugs": {
+    "url": "https://github.com/codejamninja/role-based-access-control/issues",
+    "email": "jam@codejam.ninja"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Jam Risser",
+    "email": "jam@codejam.ninja",
+    "url": "https://codejam.ninja"
+  },
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codejamninja/role-based-access-control"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "git clean -fXd \\!node_modules \\!node_modules/**/*",
+    "format": "prettier --write ./src/**/*.ts",
+    "lint": "npm run format && tslint --project .",
+    "lint:fix": "npm run format && tslint --fix --project .",
+    "prepublish": "npm run clean && npm run build",
+    "start": "ts-node src"
+  },
+  "dependencies": {
+    "@types/lodash": "^4.14.118",
+    "@types/node": "^10.12.10",
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "prettier": "^1.15.2",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "tslint-config-prettier": "^1.16.0",
+    "typescript": "^3.1.6"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "eslintIgnore": [
+    "lib"
+  ]
+}
