@@ -98,11 +98,11 @@ const someAdmin = new Subject('someVisitor', [roles.admin]);
 
 Check if subject can execute statement
 ```js
-someVisitor.can(readFile); // true
-someVisitor.can(deleteFile); // false
+someVisitor.can(statements.readFile); // true
+someVisitor.can(statements.deleteFile); // false
 
-someAdmin.can(readFile); // true
-someAdmin.can(deleteFile); // true
+someAdmin.can(statements.readFile); // true
+someAdmin.can(statements.deleteFile); // true
 ```
 
 
