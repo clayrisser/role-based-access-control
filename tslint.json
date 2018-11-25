@@ -1,4 +1,7 @@
 {
-  "defaultSeverity": "error",
-  "extends": ["tslint-config-airbnb", "tslint-config-prettier"]
+  "extends": ["tslint-config-airbnb", "tslint-config-prettier"],
+  "rules": {
+    "no-parameter-reassignment": false,
+    "variable-name": false
+  }
 }
