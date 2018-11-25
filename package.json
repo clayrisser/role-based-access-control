@@ -1,6 +1,6 @@
 {
   "name": "role-based-access-control",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "unopinionated role based access control",
   "keywords": [
     "role-based-access-control",

@@ -83,7 +83,7 @@ const policies = {
 Create roles from policies
 ```js
 const roles = {
-  visitor: new Role('read', [policies.readAll]),
+  visitor: new Role('visitor', [policies.readAll]),
   user: new Role('user', [policies.readAll, policies.writeAll]),
   admin: new Role('admin', [policies.allFiles, policies.allFolders])
 };
