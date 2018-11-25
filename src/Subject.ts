@@ -5,9 +5,12 @@ import Role from './Role';
 import Statement from './Statement';
 
 export default class Subject {
+  description: string;
   _statements: Statement[] | null;
 
-  constructor(public name: string, public roles: Role[]) {}
+  constructor(public name: string, public roles: Role[], description?: string) {
+    this.description = description || name;
+  }
 
   get statements(): Statement[] {
     if (this._statements) return this._statements;

@@ -1,23 +1,39 @@
 import { Policy, Role, Statement, Subject } from '../src';
 
 const policies = {
-  read: new Policy('read', [new Statement('get', 'post')])
+  read: new Policy('read', [new Statement('get', 'post')]),
+  readPost: new Policy('read', [new Statement('get', 'post')]),
+  write: new Policy('read', [new Statement('post', 'post')])
 };
 
 const roles = {
-  visitor: new Role('read', [policies.read])
+  visitor: new Role('read', [policies.read, policies.readPost, policies.write])
 };
 
-describe('new Subject(name, roles).can(action, resource)', () => {
-  const user = new Subject('user', [roles.visitor]);
-  it('should grant user access', async () => {
-    expect(user.can('get', 'post')).toBe(true);
+describe('new Subject(name, roles)', () => {
+  const subject = new Subject('user', [roles.visitor]);
+  it('should create new subject', async () => {
+    expect(subject).toEqual({
+      description: 'user',
+      name: 'user',
+      roles: [roles.visitor]
+    });
   });
-  it('should block user access', async () => {
-    const user = new Subject('user', []);
-    expect(user.can('get', 'post')).toBe(false);
+});
+
+describe('subject.can(action, resource)', () => {
+  const subject = new Subject('user', [roles.visitor]);
+  it('should grant subject access', async () => {
+    expect(subject.can('get', 'post')).toBe(true);
+  });
+  it('should block subject access', async () => {
+    const subject = new Subject('user', []);
+    expect(subject.can('get', 'post')).toBe(false);
   });
   it('should list all unique statements', async () => {
-    expect(user.statements).toEqual([policies.read.statements[0]]);
+    expect(subject.statements).toEqual([
+      policies.read.statements[0],
+      policies.write.statements[0]
+    ]);
   });
 });
