@@ -32,7 +32,7 @@
   },
   "scripts": {
     "build": "npm run test && tsc",
-    "clean": "git clean -fXd \\!node_modules \\!node_modules/**/*",
+    "clean": "git clean -fXd -e \\!node_modules -e \\!node_modules/**/*",
     "format": "prettier --write ./src/**/*.ts",
     "lint": "npm run format && tslint --project .",
     "lint:fix": "npm run format && tslint --fix --project .",
@@ -46,6 +46,7 @@
     "lodash": "^4.17.11"
   },
   "devDependencies": {
+    "@types/jest": "^23.3.9",
     "jest": "^23.6.0",
     "prettier": "^1.15.2",
     "ts-jest": "^23.10.5",
@@ -64,12 +65,11 @@
   "jest": {
     "moduleFileExtensions": [
       "js",
-      "jsx",
       "ts",
       "tsx"
     ],
     "transform": {
-      "\\.(tsx?)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+      "\\.(tsx?)$": "ts-jest"
     },
     "testRegex": "tests(/|/.*/)[^_/]*[jt]sx?$",
     "verbose": true
