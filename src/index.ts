@@ -6,7 +6,3 @@ import Statement from './Statement';
 import Subject from './Subject';
 
 export { Action, Policy, Resource, Role, Statement, Subject };
-
-export default class RoleBasedAccessControl {
-  constructor(public policies: Policy[] = []) {}
-}

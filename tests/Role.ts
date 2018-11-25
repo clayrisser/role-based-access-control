@@ -1,7 +1,7 @@
 import { Policy, Role, Statement } from '../src';
 
 const policies = {
-  read: new Policy('read', [new Statement('get', 'post')])
+  read: new Policy('read', [new Statement('read', 'file')])
 };
 
 describe('new Role(name, policies)', () => {

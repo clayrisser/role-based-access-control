@@ -1,13 +1,13 @@
 import { Policy, Role, Statement, Subject } from '../src';
 
 const policies = {
-  read: new Policy('read', [new Statement('get', 'post')]),
-  readPost: new Policy('read', [new Statement('get', 'post')]),
-  write: new Policy('read', [new Statement('post', 'post')])
+  read: new Policy('read', [new Statement('read', 'file')]),
+  readFile: new Policy('read', [new Statement('read', 'file')]),
+  write: new Policy('read', [new Statement('write', 'file')])
 };
 
 const roles = {
-  visitor: new Role('read', [policies.read, policies.readPost, policies.write])
+  visitor: new Role('read', [policies.read, policies.readFile, policies.write])
 };
 
 describe('new Subject(name, roles)', () => {
@@ -24,11 +24,11 @@ describe('new Subject(name, roles)', () => {
 describe('subject.can(action, resource)', () => {
   const subject = new Subject('user', [roles.visitor]);
   it('should grant subject access', async () => {
-    expect(subject.can('get', 'post')).toBe(true);
+    expect(subject.can(new Statement('read', 'file'))).toEqual(true);
   });
   it('should block subject access', async () => {
     const subject = new Subject('user', []);
-    expect(subject.can('get', 'post')).toBe(false);
+    expect(subject.can(new Statement('read', 'file'))).toEqual(false);
   });
   it('should list all unique statements', async () => {
     expect(subject.statements).toEqual([
