@@ -8,6 +8,8 @@
 
 > unopinionated role based access control
 
+![](assets/role-based-access-control.png)
+
 Please ★ this repo if you found it useful ★ ★ ★
 
 
